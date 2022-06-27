@@ -136,6 +136,9 @@ body{
 /* main */
 /*Hero*/
 .hero{
+     max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     background-color:var(--basic-background-color);
     background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     background-repeat: no-repeat;
@@ -200,19 +203,23 @@ body{
     margin-right: 30px;
 }
 
-.advantage-thumb{
+.advantage-list .thumb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 270px;
     height: 120px;
-    margin-bottom: 30px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 100px;
-    padding-right: 100px;
-    background-color: var(--secondary-background-color);
     border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: var(--secondary-background-color);
+    
 }
 
-
+.advantage-thumb{
+    width: 70px;
+    height: 70px;
+    fill: currentColor;
+}
 
 .advantage-list .section-title{
     margin-bottom: 10px;
@@ -275,15 +282,13 @@ body{
 }
 .team-list .text{
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 16px;
 }
 
 /* Список соц. сетей */
 .social-list{
     display: flex;
-    margin-bottom: 30px;
-    margin-right: 32px;
-    margin-left: 32px;
+    justify-content: center;
 }
 .social-list .social-item:not(:last-child){
     margin-right: 10px;
@@ -319,27 +324,20 @@ body{
     display: flex;
 }
 
-.clients-item{
-    width: 170px;
-    height: 92px;
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;
-}
 
 .clients-item:not(:last-child) {
     margin-right: 30px;
 }
 
 .clients-link{
-    display: inline-block;
-    width: 106px;
-    height: 60px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 32px;
-    margin-right: 32px;
+    display: flex;
+    width: 170px;
+    height: 92px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
     padding: 0;
-
+    border: 1px solid #AFB1B8;
     color: var(--link-logo-color);
 }
 
@@ -350,13 +348,10 @@ body{
     fill: currentColor;
 }
 
-.clients-list .clients-pic:focus,
-.clients-list .clients-pic:hover{
+.clients-link:hover,
+.clients-link:focus{
     color: var(--accent-color);
-}
-.clients-list .clients-item:hover,
-.clients-list .clients-item:focus{
-    border: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /*footer*/
@@ -367,6 +362,7 @@ body{
 }
 .footer-container{
     display: flex;
+    align-items: baseline;
 }
 
 .footer-logo{
@@ -402,7 +398,7 @@ body{
 }
 
 .footer-title{
-    margin-top: 12px;
+    margin-top: 0;
     margin-bottom: 0;
     text-transform: uppercase;
     font-family: Roboto;
@@ -476,7 +472,8 @@ body{
 .portfolio .item:not(:nth-last-child(-n + 3)){
     margin-bottom: 30px;
 }
-.portfolio-item{
+  
+.portfolio-item {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 24px;
@@ -484,10 +481,6 @@ body{
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-}
-
-.portfolio .item:hover{
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-title{
@@ -500,8 +493,18 @@ body{
     letter-spacing: 0.06em;
 }
 
+.portfolio-link{
+    display: inline-block;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-text{
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1.88;
+    color: var(--primary-text-color);
 }
